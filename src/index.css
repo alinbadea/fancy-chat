@@ -30,7 +30,18 @@ body {
   transition: filter 0.3s ease, background-color 0.3s ease;
   user-select: none;
 }
-
+ul#chat{
+  list-style: none;
+  padding-left: 1px;
+}
+ul{
+  padding-left: 1.1rem;
+  list-style:disc;
+}
+ol{
+  padding-left: 1.1rem;
+  list-style:decimal;
+}
 :root {
   --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);

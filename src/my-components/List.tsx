@@ -44,7 +44,7 @@ interface ListProps {
 const List: React.FC<ListProps> = ({items})=>{
     return (
         <div className="flex flex-col justify-end items-start flex-1 pb-2">
-            <ul>
+            <ul id="chat">
                 {items?items.map((item)=>(
                     <ListItem key={item.id} message={item}/>
                 )):null}
