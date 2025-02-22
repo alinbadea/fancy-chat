@@ -10,7 +10,7 @@ interface ChatProps{
     messages: Message[] | null;
 }
 const Chat: React.FC<ChatProps> = ({onSend, messages})=>{
-    const [text, setText] = useState('this is a test message');
+    const [text, setText] = useState('');
     function handleSend(){
         onSend(text);
         setText('');
@@ -26,7 +26,7 @@ const Chat: React.FC<ChatProps> = ({onSend, messages})=>{
                 <Button variant="ghost" 
                     className="cursor-pointer self-end"
                     onClick={handleSend}>
-                    <Send className="text-blue-700" size="32"/>
+                    <Send className="text-blue-700 w-4 h-4"/>
                 </Button>
             </div>
         </div>

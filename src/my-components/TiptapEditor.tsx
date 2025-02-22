@@ -52,10 +52,9 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({text, onChange})=>{
                     showToolbar && <Toolbar editor={editor}/>
                 }
                 
-                <div className='flex justify-stretch items-center'>
-                    <EditorContent editor={editor} className='flex flex-1 overflow-y-auto' />
+                <div className='flex justify-stretch items-end'>
+                    <EditorContent editor={editor} className='flex-1 max-h-[3rem] overflow-y-auto' />
                     {
-                        // !showToolbar &&
                         <Button variant="ghost" 
                             className="cursor-pointer text-blue-700"
                             title={showToolbar?"Hide toolbar":"Show toolbar"}
