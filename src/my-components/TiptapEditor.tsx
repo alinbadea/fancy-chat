@@ -31,7 +31,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({text, onChange})=>{
         ],
         editorProps:{
             attributes:{
-                class:'flex-1 border-none focus-visible:ring-0 focus-visible:border-none focus-visible:outline-none p-1'
+                class:'flex-1 border-none focus-visible:ring-0 focus-visible:border-none focus-visible:outline-none p-1 text-wrap'
             }
         }
     });
