@@ -16,14 +16,15 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({text, onChange})=>{
     const editor = useEditor({
         content:text,
         onUpdate: ({editor})=>{
-            onChange(editor.getHTML());
-            console.log(editor.getHTML());
+            if(onChange){
+                onChange(editor.getHTML());
+            }
         },
         extensions: [
             StarterKit,
             Spoiler.configure({
-                spoilerClass: 'spoiler',
                 HTMLAttributes: {
+                    class: 'spoiler',
                     'data-spoiler': 'true',
                 },
             }),

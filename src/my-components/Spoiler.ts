@@ -1,4 +1,4 @@
-import {Mark, RawCommands, mergeAttributes} from '@tiptap/core';
+import {CommandProps, Mark, RawCommands, mergeAttributes} from '@tiptap/core';
 
 
 const Spoiler = Mark.create({
@@ -31,7 +31,7 @@ const Spoiler = Mark.create({
 
     addCommands() {
         return {
-          toggleSpoiler: () => ({ chain }) => {
+          toggleSpoiler: () => ({ chain }:CommandProps) => {
             return chain().toggleMark(this.name).run();
           },
         } as Partial<RawCommands>;;

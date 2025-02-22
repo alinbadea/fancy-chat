@@ -1,27 +1,27 @@
 import { Message } from "../models/models";
-import parse, {Element} from 'html-react-parser';
+import parse from 'html-react-parser';
 
-const transform = (domNode: any) => {
-if (domNode instanceof Element && domNode.name === "spoiler") {
-    return (
-    <span
-        style={{
-        backgroundColor: "black",
-        color: "black",
-        cursor: "pointer",
-        padding: "2px 4px",
-        transition: "color 0.3s",
-        }}
-        onClick={(e) => {
-        const target = e.target as HTMLElement;
-        target.style.color = target.style.color === "black" ? "white" : "black";
-        }}
-    >
-        {parse(domNode.children.map((child) => child.data).join(""))}
-    </span>
-    );
-}
-};
+// const transform = (domNode: any) => {
+// if (domNode instanceof Element3 && domNode.name === "span") {
+//     return (
+//     <span
+//         style={{
+//         backgroundColor: "black",
+//         color: "black",
+//         cursor: "pointer",
+//         padding: "2px 4px",
+//         transition: "color 0.3s",
+//         }}
+//         onClick={(e) => {
+//         const target = e.target as HTMLElement;
+//         target.style.color = target.style.color === "black" ? "white" : "black";
+//         }}
+//     >
+//         {parse(domNode.children.map((child) => child.data).join(""))}
+//     </span>
+//     );
+// }
+// };
 
 interface ListProps {
     items: Message[] | null;
@@ -43,7 +43,7 @@ interface ListItemProps{
 }
 const ListItem:React.FC<ListItemProps> = ({message})=>{
     return (
-        <li className="border border-1 border-gray-500 p-1 mb-1">{parse(message.content, { replace: transform })}</li>
+        <li className="border border-1 border-gray-500 p-1 mb-1">{parse(message.content/*, { replace: transform }*/)}</li>
     )
 }
 
